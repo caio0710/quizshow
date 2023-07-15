@@ -42,7 +42,7 @@ interface NavigationProps {
 
 const Navigation: FunctionComponent<NavigationProps> = ({ currentQuestion, questions }) => {
     return (
-        <aside className="w-96 h-screen" aria-label="Sidebar">
+        <aside className="w-96 h-screen shrink-0" aria-label="Sidebar">
             <div className="h-full px-3 py-8 bg-gray-50 flex flex-col">
                 <ul className="grid grid-cols-3 gap-4">
                     {questions.map((question, index) => {

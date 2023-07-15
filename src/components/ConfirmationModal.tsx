@@ -64,13 +64,13 @@ const ConfirmationModal: FunctionComponent<ConfirmationModalProps> = ({
                             onClick={onClickConfirm}
                             className="text-white bg-green-600 hover:bg-green-800 focus:ring-4 focus:outline-none focus:ring-green-300 font-medium rounded-lg text-sm inline-flex items-center px-5 py-2.5 text-center mr-2"
                         >
-                            Sim
+                            Sim <i>(Enter)</i>
                         </button>
                         <button
                             onClick={onClickClose}
                             className="text-red-600 bg-white hover:bg-red-800 focus:ring-4 focus:outline-none focus:ring-red-200 rounded-lg border border-red-600 text-sm font-medium px-5 py-2.5 hover:text-white focus:z-10"
                         >
-                            Não
+                            Não <i>(Esc)</i>
                         </button>
                     </div>
                 </div>
