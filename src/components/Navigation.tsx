@@ -1,6 +1,7 @@
 import { FunctionComponent } from "react";
 
 import { QuestionType } from "@/helpers/question-helpers";
+import Link from "next/link";
 
 interface NavigationItemProps {
     number: string;
@@ -64,12 +65,12 @@ const Navigation: FunctionComponent<NavigationProps> = ({ currentQuestion, quest
                         );
                     })}
                 </ul>
-                <button
-                    type="button"
+                <Link
+                    href="/"
                     className="text-red-700 hover:text-white border border-red-700 hover:bg-red-800 focus:ring-4 focus:outline-none focus:ring-red-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center mt-auto"
                 >
                     Encerrar o jogo
-                </button>
+                </Link>
             </div>
         </aside>
     );

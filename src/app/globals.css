@@ -18,5 +18,23 @@
 
 body {
     color: rgb(var(--foreground-rgb));
-    background: linear-gradient(to bottom, transparent, rgb(var(--background-end-rgb))) rgb(var(--background-start-rgb));
+    background: linear-gradient(-45deg, #ffffff, #c0c0c0);
+    /* background-size: 400% 400%; */
+    /* animation: gradient 8s ease infinite; */
+}
+
+.game-over {
+    background: linear-gradient(-45deg, #ffa4a4, #a52f2f);
+}
+
+@keyframes gradient {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
 }

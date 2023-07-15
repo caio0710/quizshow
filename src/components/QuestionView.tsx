@@ -1,8 +1,9 @@
 import { FunctionComponent, useCallback, useEffect, useState } from "react";
 import Image from "next/image";
 
-import { AnswerType, QuestionType } from "@/helpers/question-helpers";
+import { QuestionType } from "@/helpers/question-helpers";
 import ConfirmationModal from "./ConfirmationModal";
+import { useRouter } from "next/navigation";
 
 const getLetterByIndex = (index: number) => {
     return ["A", "B", "C", "D"][index];
@@ -23,6 +24,7 @@ const QuestionView: FunctionComponent<NavigationProps> = ({ questionNumber, ques
     const [showModal, setShowModal] = useState(false);
     const [isRightAnswer, setIsRightAnswer] = useState(false);
     const [showResult, setShowResult] = useState(false);
+    const router = useRouter();
 
     const handleModalConfirm = useCallback(() => {
         const correct = !!question.answers[selectedAnswer]?.correct;
@@ -32,9 +34,13 @@ const QuestionView: FunctionComponent<NavigationProps> = ({ questionNumber, ques
         setShowModal(false);
 
         setTimeout(() => {
-            goToNextQuestion();
-        }, 2000);
-    }, [selectedAnswer, question, goToNextQuestion]);
+            if (correct) {
+                goToNextQuestion();
+            } else {
+                router.replace("/gameover");
+            }
+        }, 3000);
+    }, [selectedAnswer, question, goToNextQuestion, router]);
 
     const onClickAnswer = useCallback((answerIndex: number) => {
         setSelectedAnswer(answerIndex);
@@ -120,12 +126,12 @@ const QuestionView: FunctionComponent<NavigationProps> = ({ questionNumber, ques
                     })}
                 </div>
                 {showResult && isRightAnswer && (
-                    <div className="p-6 bg-green-600 rounded-lg shadow mt-4">
+                    <div className="p-6 bg-green-600 rounded-lg shadow mt-4 w-fit mx-auto">
                         <h2 className="text-white text-center">Parabéns, você acertou a resposta!</h2>
                     </div>
                 )}
                 {showResult && !isRightAnswer && (
-                    <div className="p-6 bg-red-600 rounded-lg shadow mt-4">
+                    <div className="p-6 bg-red-600 rounded-lg shadow mt-4 w-fit mx-auto">
                         <h2 className="text-white text-center">Que pena, você errou!</h2>
                     </div>
                 )}
