@@ -23,8 +23,16 @@ body {
     /* animation: gradient 8s ease infinite; */
 }
 
+.game-start {
+    background: linear-gradient(-45deg, #a4c4ff, #2f58a5);
+}
+
 .game-over {
     background: linear-gradient(-45deg, #ffa4a4, #a52f2f);
+}
+
+.game-success {
+    background: linear-gradient(-45deg, #a4ffa4, #2fa549);
 }
 
 @keyframes gradient {

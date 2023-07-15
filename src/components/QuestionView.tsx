@@ -35,7 +35,11 @@ const QuestionView: FunctionComponent<NavigationProps> = ({ questionNumber, ques
 
         setTimeout(() => {
             if (correct) {
-                goToNextQuestion();
+                if (questionNumber === 15) {
+                    router.replace("/finish");
+                } else {
+                    goToNextQuestion();
+                }
             } else {
                 router.replace("/gameover");
             }
