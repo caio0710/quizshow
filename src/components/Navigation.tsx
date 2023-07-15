@@ -1,70 +1,68 @@
-import Image from "next/image";
 import { FunctionComponent } from "react";
 
-type NavigationItemProps = {
+import { QuestionType } from "@/helpers/question-helpers";
+
+interface NavigationItemProps {
     number: string;
     difficulty: "easy" | "medium" | "hard";
     active: boolean;
     done: boolean;
-};
+    notReady: boolean;
+}
 
-const getDifficultyColorClass = (difficulty: "easy" | "medium" | "hard") => {
-    switch (difficulty) {
-        case "medium":
-            return "bg-yellow-600 color-yellow-600";
-        case "hard":
-            return "bg-red-600 color-red-600";
-        default:
-            return "bg-green-600 color-green-600";
-    }
-};
+const NavigationItem: FunctionComponent<NavigationItemProps> = ({ number, difficulty, active, done, notReady }) => {
+    const difficultyColorMap = {
+        easy: "green",
+        medium: "yellow",
+        hard: "red"
+    };
 
-const difficultyColorMap = {
-    easy: "green",
-    medium: "yellow",
-    hard: "red"
-};
-
-const NavigationItem = ({ number, difficulty, active, done }: NavigationItemProps) => {
     const difficultyColor = difficultyColorMap[difficulty];
-    let itemClass = `p-4 flex justify-center rounded text-white font-bold text-lg cursor-default`;
+    let itemClass = `p-4 flex justify-center rounded text-white font-bold text-lg cursor-default bg-${difficultyColor}-600`;
 
     if (active) {
         itemClass = `${itemClass} outline outline-offset-2 outline-${difficultyColor}-600`;
     }
 
     if (done) {
-        itemClass = `${itemClass} bg-${difficultyColor}-700`;
-    } else {
-        itemClass = `${itemClass} bg-${difficultyColor}-600`;
+        itemClass = `${itemClass} opacity-40`;
+    }
+
+    if (notReady) {
+        itemClass = `${itemClass} opacity-70`;
     }
 
     return <li className={itemClass}>{number}</li>;
 };
 
-const Navigation: FunctionComponent = () => {
+interface NavigationProps {
+    currentQuestion: number;
+    questions: QuestionType[];
+}
+
+const Navigation: FunctionComponent<NavigationProps> = ({ currentQuestion, questions }) => {
     return (
         <aside className="w-96 h-screen" aria-label="Sidebar">
             <div className="h-full px-3 py-8 bg-gray-50 flex flex-col">
-                <div className="flex justify-center mb-5">
-                    <Image src="/logo.png" alt="Super Quiz Logo" className="mr-3" width={150} height={150} priority />
-                </div>
                 <ul className="grid grid-cols-3 gap-4">
-                    <NavigationItem number="01" difficulty="easy" active={false} done={true} />
-                    <NavigationItem number="02" difficulty="easy" active={false} done={true} />
-                    <NavigationItem number="03" difficulty="easy" active={false} done={true} />
-                    <NavigationItem number="04" difficulty="easy" active={true} done={false} />
-                    <NavigationItem number="05" difficulty="easy" active={false} done={false} />
-                    <NavigationItem number="06" difficulty="medium" active={false} done={false} />
-                    <NavigationItem number="07" difficulty="medium" active={false} done={false} />
-                    <NavigationItem number="08" difficulty="medium" active={false} done={false} />
-                    <NavigationItem number="09" difficulty="medium" active={false} done={false} />
-                    <NavigationItem number="10" difficulty="medium" active={false} done={false} />
-                    <NavigationItem number="11" difficulty="hard" active={false} done={false} />
-                    <NavigationItem number="12" difficulty="hard" active={false} done={false} />
-                    <NavigationItem number="13" difficulty="hard" active={false} done={false} />
-                    <NavigationItem number="14" difficulty="hard" active={false} done={false} />
-                    <NavigationItem number="15" difficulty="hard" active={false} done={false} />
+                    {questions.map((question, index) => {
+                        const questionNumber = index + 1;
+
+                        const isDone = questionNumber < currentQuestion;
+                        const isActive = questionNumber === currentQuestion;
+                        const questionText = questionNumber < 10 ? `0${questionNumber}` : `${questionNumber}`;
+
+                        return (
+                            <NavigationItem
+                                key={index}
+                                number={questionText}
+                                difficulty={question.level}
+                                active={isActive}
+                                done={isDone}
+                                notReady={questionNumber > currentQuestion}
+                            />
+                        );
+                    })}
                 </ul>
                 <button
                     type="button"

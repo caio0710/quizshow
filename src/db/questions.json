@@ -1,0 +1,278 @@
+{
+    "easy": [
+        {
+            "question": "Qual ator interpretou o papel de Harry Potter nos filmes da saga?",
+            "answers": [
+                { "answer": "Daniel Radcliffe", "correct": true },
+                { "answer": "Emma Watson", "correct": false },
+                { "answer": "Rupert Grint", "correct": false },
+                { "answer": "Tom Felton", "correct": false }
+            ]
+        },
+        {
+            "question": "Qual seleção venceu a Copa do Mundo de Futebol de 2018?",
+            "answers": [
+                { "answer": "Alemanha", "correct": false },
+                { "answer": "Brasil", "correct": false },
+                { "answer": "França", "correct": true },
+                { "answer": "Argentina", "correct": false }
+            ]
+        },
+        {
+            "question": "Qual é a capital da Austrália?",
+            "answers": [
+                { "answer": "Sydney", "correct": true },
+                { "answer": "Melbourne", "correct": false },
+                { "answer": "Perth", "correct": false },
+                { "answer": "Canberra", "correct": false }
+            ]
+        },
+        {
+            "question": "Qual é o sistema operacional padrão dos computadores da Apple?",
+            "answers": [
+                { "answer": "Windows", "correct": false },
+                { "answer": "Android", "correct": false },
+                { "answer": "Linux", "correct": false },
+                { "answer": "macOS", "correct": true }
+            ]
+        },
+        {
+            "question": "Quantos meses do ano têm 31 dias?",
+            "answers": [
+                { "answer": "5", "correct": false },
+                { "answer": "6", "correct": false },
+                { "answer": "7", "correct": true },
+                { "answer": "8", "correct": false }
+            ]
+        },
+        {
+            "question": "Quem fundou a empresa Microsoft?",
+            "answers": [
+                { "answer": "Bill Gates", "correct": true },
+                { "answer": "Steve Jobs", "correct": false },
+                { "answer": "Mark Zuckerberg", "correct": false },
+                { "answer": "Jeff Bezos", "correct": false }
+            ]
+        },
+        {
+            "question": "Qual é o país com a maior área territorial do mundo?",
+            "answers": [
+                { "answer": "Rússia", "correct": true },
+                { "answer": "Canadá", "correct": false },
+                { "answer": "China", "correct": false },
+                { "answer": "Estados Unidos", "correct": false }
+            ]
+        },
+        {
+            "question": "Qual é o nome do diretor da trilogia \"O Senhor dos Anéis\"?",
+            "answers": [
+                { "answer": "Steven Spielberg", "correct": false },
+                { "answer": "Martin Scorsese", "correct": false },
+                { "answer": "James Cameron", "correct": false },
+                { "answer": "Peter Jackson", "correct": true }
+            ]
+        },
+        {
+            "question": "Qual é a moeda oficial do Japão?",
+            "answers": [
+                { "answer": "Yen", "correct": true },
+                { "answer": "Dólar", "correct": false },
+                { "answer": "Euro", "correct": false },
+                { "answer": "Libra Esterlina", "correct": false }
+            ]
+        },
+        {
+            "question": "Qual é o planeta mais próximo do Sol?",
+            "answers": [
+                { "answer": "Marte", "correct": false },
+                { "answer": "Terra", "correct": false },
+                { "answer": "Vênus", "correct": false },
+                { "answer": "Mercúrio", "correct": true }
+            ]
+        }
+    ],
+    "medium": [
+        {
+            "question": "Quem é considerado o \"pai da computação\" e desenvolveu a primeira máquina de computação mecânica programável?",
+            "answers": [
+                { "answer": "Bill Gates", "correct": false },
+                { "answer": "Alan Turing", "correct": true },
+                { "answer": "Charles Babbage", "correct": false },
+                { "answer": "Tim Berners-Lee", "correct": false }
+            ]
+        },
+        {
+            "question": "Qual pintor é considerado o precursor do movimento impressionista?",
+            "answers": [
+                { "answer": "Édouard Manet", "correct": false },
+                { "answer": "Pierre-Auguste Renoir", "correct": false },
+                { "answer": "Claude Monet", "correct": true },
+                { "answer": "Edgar Degas", "correct": false }
+            ]
+        },
+        {
+            "question": "Quem foi o primeiro presidente dos Estados Unidos?",
+            "answers": [
+                { "answer": "Thomas Jefferson", "correct": false },
+                { "answer": "Abraham Lincoln", "correct": false },
+                { "answer": "George Washington", "correct": true },
+                { "answer": "John F. Kennedy", "correct": false }
+            ]
+        },
+        {
+            "question": "Em que ano ocorreu a queda do Muro de Berlim?",
+            "answers": [
+                { "answer": "1985", "correct": false },
+                { "answer": "1989", "correct": true },
+                { "answer": "1991", "correct": false },
+                { "answer": "1993", "correct": false }
+            ]
+        },
+        {
+            "question": "Em que ano foi proclamada a República no Brasil?",
+            "answers": [
+                { "answer": "1808", "correct": false },
+                { "answer": "1822", "correct": false },
+                { "answer": "1889", "correct": true },
+                { "answer": "1930", "correct": false }
+            ]
+        },
+        {
+            "question": "Qual filme ganhou o Oscar de Melhor Filme em 1994?",
+            "answers": [
+                { "answer": "Forrest Gump", "correct": false },
+                { "answer": "Pulp Fiction", "correct": false },
+                { "answer": "Braveheart", "correct": false },
+                { "answer": "Schindler's List", "correct": true }
+            ]
+        },
+        {
+            "question": "Qual foi o primeiro álbum lançado pela banda britânica Pink Floyd?",
+            "answers": [
+                { "answer": "The Dark Side of the Moon", "correct": false },
+                { "answer": "The Wall", "correct": false },
+                { "answer": "Wish You Were Here", "correct": false },
+                { "answer": "The Piper at the Gates of Dawn", "correct": true }
+            ]
+        },
+        {
+            "question": "Qual é a capital do Canadá?",
+            "answers": [
+                { "answer": "Toronto", "correct": false },
+                { "answer": "Ottawa", "correct": true },
+                { "answer": "Vancouver ", "correct": false },
+                { "answer": "Montreal ", "correct": false }
+            ]
+        },
+        {
+            "question": "Qual pintor é famoso por sua obra \"A Noite Estrelada\"?",
+            "answers": [
+                { "answer": "Pablo Picasso", "correct": false },
+                { "answer": "Vincent van Gogh", "correct": true },
+                { "answer": "Salvador Dalí", "correct": false },
+                { "answer": "Leonardo da Vinci", "correct": false }
+            ]
+        },
+        {
+            "question": "Quem foi o primeiro presidente eleito pelo voto direto no Brasil, após o período da Ditadura Militar?",
+            "answers": [
+                { "answer": "João Figueiredo", "correct": false },
+                { "answer": "Tancredo Neves", "correct": false },
+                { "answer": "José Sarney", "correct": false },
+                { "answer": "Fernando Collor", "correct": true }
+            ]
+        }
+    ],
+    "hard": [
+        {
+            "question": "Qual é o ponto mais alto do continente europeu?",
+            "answers": [
+                { "answer": "Monte Elbrus", "correct": true },
+                { "answer": "Mont Blanc", "correct": false },
+                { "answer": "Monte Everest", "correct": false },
+                { "answer": "Monte Kilimanjaro", "correct": false }
+            ]
+        },
+        {
+            "question": "Qual batalha marcou o fim do domínio napoleônico na Europa?",
+            "answers": [
+                { "answer": "Batalha de Waterloo", "correct": true },
+                { "answer": "Batalha de Austerlitz", "correct": false },
+                { "answer": "Batalha de Leipzig", "correct": false },
+                { "answer": "Batalha de Trafalgar", "correct": false }
+            ]
+        },
+        {
+            "question": "Qual é o recorde mundial masculino nos 100 metros rasos?",
+            "answers": [
+                { "answer": "9,74 segundos", "correct": false },
+                { "answer": "9,69 segundos", "correct": false },
+                { "answer": "9,58 segundos", "correct": true },
+                { "answer": "9,63 segundos", "correct": false }
+            ]
+        },
+        {
+            "question": "O que significa a sigla \"URL\"?",
+            "answers": [
+                { "answer": "Universal Resource Locator", "correct": false },
+                { "answer": "Uniform Resource Locator", "correct": true },
+                { "answer": "Universal Reference Locator", "correct": false },
+                { "answer": "Unique Resource Locator", "correct": false }
+            ]
+        },
+        {
+            "question": "Qual é o metal mais abundante na crosta terrestre?",
+            "answers": [
+                { "answer": "Ouro", "correct": false },
+                { "answer": "Cobre", "correct": false },
+                { "answer": "Ferro", "correct": true },
+                { "answer": "Alumínio", "correct": false }
+            ]
+        },
+        {
+            "question": "Qual tenista tem o recorde de maior número de títulos de Grand Slam na história do tênis masculino?",
+            "answers": [
+                { "answer": "Roger Federer", "correct": false },
+                { "answer": "Rafael Nadal", "correct": false },
+                { "answer": "Pete Sampras", "correct": false },
+                { "answer": "Novak Djokovic", "correct": true }
+            ]
+        },
+        {
+            "question": "Quem dirigiu o filme nacional \"A hora da estrela\", de 1985?",
+            "answers": [
+                { "answer": "Glauber Rocha", "correct": false },
+                { "answer": "Cacá Diegues", "correct": false },
+                { "answer": "Walter Salles", "correct": false },
+                { "answer": "Suzana Amaral", "correct": true }
+            ]
+        },
+        {
+            "question": "Quantas eram as capitanias hereditárias?",
+            "answers": [
+                { "answer": "8", "correct": false },
+                { "answer": "10", "correct": true },
+                { "answer": "14 ", "correct": false },
+                { "answer": "16 ", "correct": false }
+            ]
+        },
+        {
+            "question": "O gládio é um tipo de espada que está associada a qual grande império?",
+            "answers": [
+                { "answer": "Império Persa", "correct": false },
+                { "answer": "Império Romano", "correct": true },
+                { "answer": "Império Egípcio", "correct": false },
+                { "answer": "Império Bizantino", "correct": false }
+            ]
+        },
+        {
+            "question": "O que é “preamar”?",
+            "answers": [
+                { "answer": "Maré baixa", "correct": false },
+                { "answer": "Maré alta", "correct": true },
+                { "answer": "Maré média", "correct": false },
+                { "answer": "Maré seca", "correct": false }
+            ]
+        }
+    ]
+}
