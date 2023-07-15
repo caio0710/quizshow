@@ -44,7 +44,7 @@ const QuestionView: FunctionComponent<NavigationProps> = ({ questionNumber, ques
                 router.replace("/gameover");
             }
         }, 3000);
-    }, [selectedAnswer, question, goToNextQuestion, router]);
+    }, [selectedAnswer, question, goToNextQuestion, router, questionNumber]);
 
     const onClickAnswer = useCallback((answerIndex: number) => {
         setSelectedAnswer(answerIndex);
