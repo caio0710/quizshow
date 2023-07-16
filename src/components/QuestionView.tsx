@@ -105,9 +105,6 @@ const QuestionView: FunctionComponent<NavigationProps> = ({
         return { ...answer };
     });
 
-    console.log(hasUsedPower, hasUsedPowerPlus);
-    console.log(answers);
-
     return (
         question && (
             <div className="h-full flex flex-col">
