@@ -3,6 +3,7 @@ import questions from "@/db/questions.json";
 export type AnswerType = {
     answer: string;
     correct: boolean;
+    disabled: boolean;
 };
 
 export type QuestionType = {

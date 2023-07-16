@@ -17,9 +17,17 @@ interface NavigationProps {
     questionNumber: number;
     question: QuestionType;
     goToNextQuestion: () => void;
+    hasUsedPower: boolean;
+    hasUsedPowerPlus: boolean;
 }
 
-const QuestionView: FunctionComponent<NavigationProps> = ({ questionNumber, question, goToNextQuestion }) => {
+const QuestionView: FunctionComponent<NavigationProps> = ({
+    questionNumber,
+    question,
+    goToNextQuestion,
+    hasUsedPower,
+    hasUsedPowerPlus
+}) => {
     const [selectedAnswer, setSelectedAnswer] = useState(-1);
     const [showModal, setShowModal] = useState(false);
     const [isRightAnswer, setIsRightAnswer] = useState(false);
@@ -84,19 +92,35 @@ const QuestionView: FunctionComponent<NavigationProps> = ({ questionNumber, ques
         setSelectedAnswer(-1);
     }, [questionNumber]);
 
+    let countDisabled = 0;
+
+    const answers = question?.answers.map((answer) => {
+        if (answer.correct) return { ...answer };
+
+        if ((hasUsedPower && countDisabled < 1) || (hasUsedPowerPlus && countDisabled < 2)) {
+            countDisabled++;
+            return { ...answer, disabled: true };
+        }
+
+        return { ...answer };
+    });
+
+    console.log(hasUsedPower, hasUsedPowerPlus);
+    console.log(answers);
+
     return (
         question && (
             <div className="h-full flex flex-col">
                 <div className="flex justify-center mb-5">
                     <Image src="/logo.png" alt="Super Quiz Logo" className="mr-3" width={400} height={400} priority />
                 </div>
-                <div className="max-w p-6 bg-white border border-gray-200 rounded-lg shadow mt-4">
+                <div className="max-w p-6 bg-white border border-gray-200 rounded-lg shadow mt-4 relative">
                     <h5 className="text-2xl font-bold tracking-tight text-gray-900 text-center">
                         {questionNumber < 10 ? `0${questionNumber}` : questionNumber} - {question.question}
                     </h5>
                 </div>
                 <div className="max-w grid grid-cols-2 gap-4 mt-8">
-                    {question.answers.map((answer, index) => {
+                    {answers.map((answer, index) => {
                         let answerClass = "";
 
                         if (showResult) {
@@ -111,6 +135,8 @@ const QuestionView: FunctionComponent<NavigationProps> = ({ questionNumber, ques
                             } else {
                                 answerClass += " bg-white text-gray-700";
                             }
+                        } else if (answer.disabled) {
+                            answerClass += " bg-white text-gray-700 hover:bg-gray-100 opacity-30";
                         } else {
                             answerClass += " bg-white text-gray-700 hover:bg-gray-100";
                         }
@@ -120,7 +146,7 @@ const QuestionView: FunctionComponent<NavigationProps> = ({ questionNumber, ques
                                 key={index}
                                 className={"max-w p-6 border border-gray-200 rounded-lg shadow " + answerClass}
                                 onClick={onClickAnswer.bind(null, index)}
-                                disabled={showResult}
+                                disabled={showResult || answer.disabled}
                             >
                                 <p className="font-normal">
                                     ({getLetterByIndex(index)}) - {answer.answer}
